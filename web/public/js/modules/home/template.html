@@ -1,0 +1,111 @@
+<div class="container-fluid">
+    <h2 class="text-center">Калькулятор</h2>
+
+    <form>
+        <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Название и размер (продаваемого продукта)</th>
+                        <th> <select id="productSelect"
+                                     ng-model="prodSelect"
+                                     ng-change="getProduct()">
+                                <option value="1" selected>97x97x4000 | brusas</option>
+                                <option value="2">75x75x4000 | brusas</option>
+                                <option value="3">16x100x4000 | lentele</option>
+                                <option value="4">19x100x4000 | lentele</option>
+                                <option value="5">25x100x4000 | lentele</option>
+                            </select>
+                        </th>
+                        <th>ТxШxД | тип</th>
+                        <th>Доступно для выбора из существующей продукции</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Толщина (продаваемого продукта)</td>
+                        <td><input ng-model="product.thickness"></td>
+                        <td>ММ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Ширина (продаваемого продукта)</td>
+                        <td><input ng-model="product.width"></td>
+                        <td>ММ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Длинна (продаваемого продукта)</td>
+                        <td><input ng-model="product.length"></td>
+                        <td>ММ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Толщина (закупаемого продукта)</td>
+                        <td><input ng-model="product.thick_real"></td>
+                        <td>ММ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Ширина (закупаемого продукта)</td>
+                        <td><input ng-model="product.width_real"></td>
+                        <td>ММ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Длинна (закупаемого продукта)</td>
+                        <td><input ng-model="product.length_real"></td>
+                        <td>ММ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Кубатура загружаемая в авто в Литву</td>
+                        <td><input ng-change="getResult()" ng-model="product.size_m3"></td>
+                        <td>m3</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Закупочная цена</td>
+                        <td><input ng-change="getResult()" ng-model="product.push_price"></td>
+                        <td>EUR</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Деффект % (закупаемого продукта)</td>
+                        <td><input ng-change="getResult()" ng-model="product.deffect_procent"></td>
+                        <td>%</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Цена деффекта (закупаемого продукта)</td>
+                        <td><input ng-change="getResult()" ng-model="product.deffect_cost"></td>
+                        <td>EUR</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Транспорт в Литву</td>
+                        <td><input ng-change="getResult()" ng-model="product.logistic"></td>
+                        <td>EUR</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Комиссионные</td>
+                        <td><input ng-change="getResult()" ng-model="product.commission"></td>
+                        <td>EUR/m3</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Полная закупочная цена за м3</td>
+                        <td>{{result_m3 | number:2}}</td>
+                        <td>EUR/m3</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Полная закупочная цена</td>
+                        <td>{{result | number:2}}</td>
+                        <td>EUR</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+        </table>
+    </form>
+</div>

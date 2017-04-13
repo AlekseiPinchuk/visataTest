@@ -1,0 +1,47 @@
+{
+  "name": "phplabs",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "cookie-parser": "^1.4.2",
+    "body-parser": "1.15.2",
+    "cookie-session": "1.*",
+    "nunjucks": "^3.0.0",
+    "serve-favicon": "^2.3.2",
+    "domready": "^1.0.8",
+    "lodash": "^4.17.4",
+    "request": "^2.79.0",
+    "alertifyjs": "*"
+  },
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-nodemon": "^2.2.1",
+    "browserify-shim": "^3.8.12",
+    "partialify": "^3.1.6",
+
+    "through2": "^2.0.3",
+    "crypto": "^0.0.3",
+    "gulp-util": "^3.0.8"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "partialify"
+    ]
+  },
+  "browserify-shim": {
+    "angular": "global:angular",
+    "lodash": "global:_",
+    "alertify": "global:alertify",
+    "moment": "global:moment",
+    "moment-timezone": "global:moment-timezone"
+  }
+}
